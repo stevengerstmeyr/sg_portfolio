@@ -1,0 +1,15 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; /* Optional, just to visualize the div better */
+}
+
+.transition-div {
+    width: 300px; /* Adjust width as needed */
+    height: 300px; /* Adjust height as needed */
+    background: linear-gradient(to bottom, rgb(0, 155, 220), rgb(0, 205, 250));
+    border-radius: 8px; /* Optional, for rounded corners */
+}
