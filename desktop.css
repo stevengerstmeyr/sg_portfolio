@@ -19,8 +19,9 @@ body {
 }
 
 .box {
-    width: 100px;
-    height: 80px;
+    width: 200px;
+    height: 400px;
     background: linear-gradient(to right, #00172D, #00498D);
-    border-radius: 8px;
+    border-radius: 16px;
+    margin: 20px;
 }
