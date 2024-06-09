@@ -2,7 +2,6 @@ body {
     margin: 0;
     height: 100vh;
     width: 100%;
-    overflow: hidden;
     display: flex;
     flex-direction: column;
     background: linear-gradient(to right, rgb(0, 125, 200), rgb(0, 205, 250));
@@ -11,13 +10,14 @@ body {
 }
 
 .header {
+    overflow: visible;
     width: 100%;
     height: 60px;
-    background: transparent;
+    background: linear-gradient(to right, rgb(0, 125, 200), rgb(0, 205, 250));
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 3;
     display: flex;
     justify-content: space-between;
     /* Distribute elements horizontally */
@@ -27,18 +27,20 @@ body {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo img {
-    height: 50px;
-    /* Adjust the height of the logo */
-}
-
 .logo {
     background: transparent;
 }
 
-.logo img:hover{
+.logo img {
+    height: 50px;
+    /* Adjust the height of the logo */
+    transition: all 0.3s ease;
+}
+
+.logo img:hover {
     content: url(SGLogoOrange.png);
-    transition: content 0.3s ease;
+    /* Replace "SGLogoOrange.png" with the path to your orange logo */
+    transition: all 0.3s ease;
 }
 
 .button-container {
@@ -55,19 +57,19 @@ body {
     font-weight: bold;
     cursor: pointer;
     position: relative;
-    overflow: hidden;
     border-radius: 16px;
     transition: color 0.3s ease;
 }
 
 .header-button::before {
     content: '';
+    border-radius: 16px;
     position: absolute;
-    top: -100%;
+    top: -60px;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #FF7B00,rgba(255,65,25,255));
+    background: linear-gradient(to right, #FF7B00, rgba(255, 65, 25, 255));
     z-index: -1;
     transition: top 0.3s ease;
 }
@@ -100,7 +102,6 @@ body {
 
 .content {
     margin-top: 60px;
-    overflow-y: auto;
     width: 100%;
     flex: 1;
     display: flex;
@@ -151,23 +152,6 @@ body {
     transform: translateY(-5px);
 }
 
-/*PROGRESS BAR*/
-
-/* The progress container (grey background) */
-.progress-container {
-    position: fixed;
-    width: 100%;
-    height: 2px;
-    background-color: none;
-}
-
-/* The progress bar (scroll indicator) */
-.progress-bar {
-    height: 100%;
-    background-color: black;
-    width: 0%;
-}
-
 .sidebar {
     height: 100%;
     width: 0;
@@ -176,8 +160,7 @@ body {
     right: 0;
     background-color: #373634;
     padding-top: 60px;
-    z-index: -1;
-    overflow-x: hidden;
+    z-index: 200;
     transition: all 0.5s ease-out;
 }
 
@@ -198,12 +181,13 @@ body {
 }
 
 .closeBtn {
-    position: absolute;
+    position: fixed;
     top: 0;
     right: 25px;
     font-size: 36px;
     margin-left: 50px;
     cursor: pointer;
+    z-index: 5
 }
 
 #openSidebarBtn {
@@ -228,12 +212,12 @@ body {
     font-size: 36px;
     margin-left: 50px;
     cursor: pointer;
-    z-index:1000;
+    z-index: 1000;
 }
 
 /* Styling the menu button */
 .menu-btn {
-    position: absolute;
+    position: fixed;
     z-index: 1000;
     right: 15px;
     top: 20px;
@@ -253,7 +237,7 @@ body {
 /* Adding transform to the X */
 .menu-btn.close {
     transform: rotate(180deg);
-    z-index: 1000;
+    z-index: 500;
     top: 16px;
 }
 
@@ -304,4 +288,22 @@ body {
 
 .nav-item:nth-child(4) {
     transition-delay: 0.4s;
+}
+
+/* PROGRESS BAR STYLES */
+
+/* The progress container (grey background) */
+.progress-container {
+    width: 100%;
+    height: 2px;
+    background: transparent;
+    top: 60px;
+    position: fixed;
+}
+
+/* The progress bar (scroll indicator) */
+.progress-bar {
+    height: 2px;
+    background: linear-gradient(to right, rgb(0, 205, 250), rgb(0, 125, 200));
+    width: 0%;
 }
