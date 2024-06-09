@@ -4,12 +4,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #f0f0f0; /* Optional, just to visualize the div better */
+    background: linear-gradient(to right, rgb(0, 155, 220), rgb(0, 205, 250));
 }
 
-.transition-div {
-    width: 100%; /* Adjust width as needed */
-    height: 100%; /* Adjust height as needed */
-    background: linear-gradient(to right, rgb(0, 155, 220), rgb(0, 205, 250));
-    border-radius: 8px; /* Optional, for rounded corners */
+.header {
+    width: 100%;
+    height: 80px;
+    background: white;
+    border-radius: 8px;
 }
