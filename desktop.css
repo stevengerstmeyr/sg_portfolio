@@ -17,3 +17,10 @@ body {
     left: 0;
     z-index: 999;
 }
+
+.box {
+    width: 100px;
+    height: 80px;
+    background: linear-gradient(to right, #00172D, #00498D);
+    border-radius: 8px;
+}
